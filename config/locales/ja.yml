@@ -1,4 +1,14 @@
 ja:
+  books:
+    new:
+      title: "新規登録"
+  views:
+    page-nav:
+      Edit this book: "書籍データの編集ページに行く"
+      Back to books: "前のページに戻る"
+      Show this book: "書籍の詳細ページに行く"
+      Destroy this book: "書籍データの削除"
+
   activerecord:
     # errors:
     #   models:
@@ -20,6 +30,7 @@ ja:
         memo: "書籍の概要・感想"
         author: "著者"
         picture: "書籍の画像"
+
   helpers:
     submit:
       create: 登録する
