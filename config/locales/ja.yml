@@ -4,15 +4,17 @@ ja:
       title: "書籍データ：新規登録"
     edit:
       title: "書籍データ：編集"
+      show_button: "書籍の詳細ページ"
+      index_button: "書籍データ一覧"
     index:
       title: "書籍データ：一覧"
-
-  views:
+    
     page-nav:
       Edit this book: "書籍データの編集ページに行く"
       Back to books: "前のページに戻る"
       Show this book: "書籍の詳細ページに行く"
       Destroy this book: "書籍データの削除"
+      New book: "新規登録画面"
 
   activerecord:
     # errors:
