@@ -15,13 +15,6 @@ ja:
       back_button: "前のページに戻る"
       delete_button: "削除"
 
-    page-nav:
-      Edit this book: "書籍データの編集ページに行く"
-      Back to books: "前のページに戻る"
-      Show this book: "書籍の詳細ページに行く"
-      Destroy this book: "書籍データの削除"
-      New book: "新規登録画面"
-
   activerecord:
     # errors:
     #   models:
