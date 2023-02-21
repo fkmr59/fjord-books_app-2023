@@ -2,7 +2,7 @@ ja:
   books:
     new:
       title: "書籍データ：新規登録"
-      index_button: "書籍データ一覧"
+      index_button: "書籍データ：一覧"
     edit:
       title: "書籍データ：編集"
       show_button: "書籍の詳細ページ"
@@ -10,7 +10,11 @@ ja:
     index:
       title: "書籍データ：一覧"
       new_button: "書籍データ：新規登録画面へ"
-    
+    show:
+      edit_button: "編集ページに移動"
+      back_button: "前のページに戻る"
+      delete_button: "削除"
+
     page-nav:
       Edit this book: "書籍データの編集ページに行く"
       Back to books: "前のページに戻る"
