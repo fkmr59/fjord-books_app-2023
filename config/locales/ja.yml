@@ -15,7 +15,12 @@ ja:
       edit_button: "編集ページに移動"
       back_button: "前のページに戻る"
       delete_button: "削除"
-
+    book:
+      title: "書籍のタイトル"
+      memo: "書籍の概要・感想"
+      author: "著者"
+      picture: "書籍の画像"
+      
   activerecord:
     # errors:
     #   models:
