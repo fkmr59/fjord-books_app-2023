@@ -23,18 +23,6 @@ ja:
       picture: "書籍の画像："
       
   activerecord:
-    # errors:
-    #   models:
-    #     book:
-    #       attributes:
-    #         title:
-    #           blank: "空になっています。入力してください。"
-    #         memo:
-    #           blank: "空になっています。入力してください。"
-    #         author:
-    #           blank: "空になっています。入力してください。"
-    #         picture:
-    #           blank: "空になっています。画像を選択してください。"
     models:
       book: "書籍"
     attributes:
