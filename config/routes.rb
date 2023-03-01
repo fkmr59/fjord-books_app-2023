@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'users/show'
-  resources :users, only: [:show]
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
+  get 'users/show'
+  resources :users, only: [:show]
   resources :books
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
