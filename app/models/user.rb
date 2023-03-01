@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   validates :postal_code, presence: true
   validates :address, presence: true
-  validates :profile, length: { maximum: 200 }
+  validates :profile, presence: true, length: { maximum: 200 }
 end
