@@ -1,3 +1,5 @@
-<h1>ユーザー一覧</h1>
-<p>メールアドレス : <%= @user.email %></p>
-<p>プロフィール : <%= @user.profile %></p>
+<h1>User index</h1>
+<% @users.each do |user| %>
+  <p>email : <%= user.email %></p>
+  <p>profile : <%= user.profile %></p>
+<% end %>
