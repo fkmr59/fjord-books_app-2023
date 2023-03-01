@@ -65,7 +65,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
     user_path(id: current_user.id)
   end
 
-  def index
-    user_path(id: current_user.id)
-  end  
 end
