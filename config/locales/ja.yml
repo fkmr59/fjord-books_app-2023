@@ -1,5 +1,12 @@
 ---
 ja:
+  users:
+    index:
+      books_index: "書籍データ一覧"
+    show:
+      books_index: "書籍データ一覧"
+
+
   activerecord:
     errors:
       messages:

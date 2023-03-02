@@ -1,5 +1,12 @@
 ---
 en:
+  users:
+    index:
+      books_index: "books_index"
+    show:
+      books_index: "books_index"
+
+      
   activerecord:
     errors:
       messages:
