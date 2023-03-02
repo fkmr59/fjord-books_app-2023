@@ -2,11 +2,16 @@
 en:
   users:
     index:
+      email: "email"
+      profile: "profile"
       books_index: "books_index"
     show:
+      email: "email"
+      postal_code: "postal_code"
+      address: "address"
+      profile: "profile"
       books_index: "books_index"
 
-      
   activerecord:
     errors:
       messages:

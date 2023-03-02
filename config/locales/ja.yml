@@ -2,11 +2,16 @@
 ja:
   users:
     index:
+      email: "Eメール"
+      profile: "プロフィール"
       books_index: "書籍データ一覧"
     show:
+      email: "Eメール"
+      postal_code: "郵便番号"
+      address: "住所"
+      profile: "プロフィール"
       books_index: "書籍データ一覧"
-
-
+      
   activerecord:
     errors:
       messages:
