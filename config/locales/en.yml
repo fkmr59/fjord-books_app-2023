@@ -1,5 +1,12 @@
 ---
 en:
+  layouts: 
+    application:
+      Logged in as: "Logged in as"
+      My page: "My page"
+      User edit: "Edit profile"
+      User index: "User index"
+      Logout: "Logout"
   users:
     index:
       email: "email"

@@ -11,11 +11,12 @@
   </head>
   <body class="<%= params[:action] %>">
     <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to "My page", user_path(current_user.id) %> |
-      <%= link_to 'Edit profile', edit_user_registration_path %> |
-      <%= link_to "User index", users_path %>
-      <%= button_to 'Logout', destroy_user_session_path, method: :delete %>
+      <p><%= t('.Logged in as')%> <strong><%= current_user.email %></strong>
+      <%= button_to t('.Logout'), destroy_user_session_path, method: :delete %></p>
+      <p><%= link_to t('.My page'), user_path(current_user.id) %> |
+      <%= link_to t('.User edit'), edit_user_registration_path %> |
+      <%= link_to t('.User index'), users_path %></p>
+      
     <% end %>
     <p class="alert"><%= alert %></p>
     <%= yield %>
