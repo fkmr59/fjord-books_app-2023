@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root to: 'books#index'
   resources :books
   resources :users, only: %i(index show)
-  root to: 'users#index'
+  # root to: 'users#index'
   resources :users, only: [:new, :create]
 end

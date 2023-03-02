@@ -7,8 +7,7 @@
       <p>
         <%= link_to t('views.common.show', name: User.model_name.human.downcase), user %>
       </p>
+        <%= image_tag user.avatar %>
     </div>
   <% end %>
 </div>
-
-<%= paginate @users %>
