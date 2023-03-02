@@ -9,10 +9,12 @@ en:
       Logout: "Logout"
   users:
     index:
+      User index: "User index"
       email: "email"
       profile: "profile"
       books_index: "books_index"
     show:
+      My page: "My page"
       email: "email"
       postal_code: "postal_code"
       address: "address"
