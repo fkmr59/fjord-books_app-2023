@@ -1,4 +1,8 @@
 <div id="<%= dom_id user %>">
+  <p>
+    <strong><%= User.human_attribute_name(:avatar) %>:</strong>
+    <%= image_tag user.avatar if user.avatar.attached? %>
+  </p>
 
   <p>
     <strong><%= User.human_attribute_name(:email) %>:</strong>
@@ -24,7 +28,5 @@
     <strong><%= User.human_attribute_name(:self_introduction) %>:</strong>
     <%= user.self_introduction %>
   </p>
-
-  <%= image_tag user.avatar if user.avatar.attached? %>
 
 </div>
