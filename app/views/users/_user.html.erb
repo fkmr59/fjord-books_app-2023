@@ -25,9 +25,6 @@
     <%= user.self_introduction %>
   </p>
 
-  <p>
-    <strong><%= User.human_attribute_name(:avatar) %>:</strong>
-    <%= image_tag @user.user_icon %>
-  </p>
+  <%= image_tag user.avatar if user.avatar.attached? %>
 
 </div>
