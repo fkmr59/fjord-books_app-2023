@@ -12,6 +12,7 @@ class BooksController < ApplicationController
   # def show; end
   def show
     @comment = Comment.new
+    @comments = @book.comments
   end
 
   # GET /books/new
