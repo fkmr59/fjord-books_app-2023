@@ -10,8 +10,8 @@
               (<%= link_to comment.user.name_or_email, comment.user %> - <%= l comment.created_at, format: :short %>)
             </small>
             <% if current_user == comment.user %>
-              <%= link_to t('views.common.edit', name: Comment.model_name.human.downcase), edit_polymorphic_path([commentable, comment]) %> |
-              <%= button_to t('views.common.destroy', name: Comment.model_name.human.downcase), polymorphic_path([commentable, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+              <%= link_to t('views.common.edit', name: Comment.model_name.human.downcase), edit_polymorphic_path([imageable, comment]) %> |
+              <%= button_to t('views.common.destroy', name: Comment.model_name.human.downcase), polymorphic_path([imageable, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
             <% end %>
           </li>
         <% end %>

@@ -5,19 +5,19 @@ class CommentsController < ApplicationController
   def edit; end
 
   def create
-    @comment = @commentable.comments.build(comment_params)
+    @comment = @imageable.comments.build(comment_params)
     @comment.user = current_user
     if @comment.save
-      redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
+      redirect_to @imageable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
-      @comments = @commentable.comments
-      render_commentable_show
+      @comments = @imageable.comments
+      render_imageable_show
     end
   end
 
   def update
     if @comment.update(comment_params)
-      redirect_to @commentable, notice: t('controllers.common.notice_update', name: Comment.model_name.human)
+      redirect_to @imageable, notice: t('controllers.common.notice_update', name: Comment.model_name.human)
     else
       render :edit
     end
@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
+    redirect_to @imageable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
 
   private
