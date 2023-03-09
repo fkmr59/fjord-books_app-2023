@@ -13,7 +13,6 @@ class BooksController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @book.comments
-    logger.debug "test"
   end
 
   # GET /books/new
