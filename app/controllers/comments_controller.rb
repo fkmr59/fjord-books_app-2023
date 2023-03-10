@@ -2,6 +2,11 @@
 
 class CommentsController < ApplicationController
 
+  def edit
+    set_imageable
+    set_comment
+  end
+
   def create
     @comment = @imageable.comments.build(comment_params)
     @comment.user = current_user

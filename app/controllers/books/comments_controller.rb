@@ -3,11 +3,6 @@
 class Books::CommentsController < CommentsController
   before_action :set_imageable
 
-  def edit
-    set_imageable
-    set_comment
-  end
-
   private
 
   def set_imageable
