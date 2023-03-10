@@ -3,7 +3,7 @@
     <strong><%= Report.human_attribute_name(:title) %>:</strong>
     <%= report.title %>
   </p>
-  
+
   <p>
     <strong><%= Report.human_attribute_name(:content) %>:</strong>
     <%= report.content %>
@@ -16,6 +16,5 @@
     <%= button_to t('views.common.destroy', name: Report.model_name.human.downcase), report, method: :delete %>
   <% end %>
   </nav>
-
 
 </div>
