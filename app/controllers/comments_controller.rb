@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    if @comment.update(comment_params)
+    if set_comment.update(comment_params)
       redirect_to @imageable, notice: t('controllers.common.notice_update', name: Comment.model_name.human)
     else
       render :edit
