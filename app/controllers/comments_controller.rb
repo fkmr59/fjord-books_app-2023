@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
-
   def edit
     set_imageable
     set_comment
@@ -32,7 +31,7 @@ class CommentsController < ApplicationController
   end
 
   private
-  
+
   def set_comment
     @comment = Comment.find(params[:id])
   end
@@ -40,5 +39,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:content)
   end
-
 end
