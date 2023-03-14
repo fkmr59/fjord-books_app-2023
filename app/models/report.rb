@@ -13,6 +13,8 @@ class Report < ApplicationRecord
   has_many :mentioned_reports, through: :mentioned_from, source: :mentioning_report
   has_many :mentioning_reports, through: :mentioning_to, source: :mentioned_report
 
+  after_save :create_mentioning_to
+
   def editable?(target_user)
     user == target_user
   end
