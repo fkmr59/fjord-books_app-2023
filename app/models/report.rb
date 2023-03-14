@@ -26,10 +26,10 @@ class Report < ApplicationRecord
   private
 
   def create_mentioning_to
-    self.mentioning_to.clear
-    report_ids = self.content.scan(%r{(?<=http://localhost:3000/reports/)\d+}).uniq.map(&:to_i)
+    mentioning_to.clear
+    report_ids = content.scan(%r{(?<=http://localhost:3000/reports/)\d+}).uniq.map(&:to_i)
     report_ids.each do |report_id|
-      self.mentioning_to.create!(mentioned_report_id: report_id)
+      mentioning_to.create!(mentioned_report_id: report_id)
     end
   end
 end
