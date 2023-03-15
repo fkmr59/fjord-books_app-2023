@@ -19,7 +19,7 @@ module ApplicationHelper
     safe_join(content.split("\n"), tag.br)
   end
 
-  def text_url_to_link(content)
+  def content_url_to_link(content)
     require 'uri'
     uri_reg = URI.regexp(%w[http https])
     content.gsub(uri_reg) { %{<a href='#{$&}' target='_blank'>#{$&}</a>} }
