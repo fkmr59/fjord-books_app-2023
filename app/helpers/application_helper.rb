@@ -20,7 +20,6 @@ module ApplicationHelper
   end
 
   def content_url_to_link(content)
-    require 'uri'
     uri_reg = URI.regexp(%w[http https])
     content.gsub(uri_reg) { %{<a href='#{$&}' target='_blank'>#{$&}</a>} }
   end
