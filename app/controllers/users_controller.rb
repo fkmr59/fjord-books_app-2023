@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to root_url, notice: 'Add User'
+      redirect_to root_url
     else
       render :new
     end
