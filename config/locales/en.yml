@@ -51,6 +51,12 @@ en:
       title_new: "New %{name}"
       title_edit: "Editing %{name}"
 
+  controllers:
+    common:
+      notice_create: "%{name} was successfully created."
+      notice_update: "%{name} was successfully updated."
+      notice_destroy: "%{name} was successfully destroyed."
+
   helpers:
     submit:
       create: create
