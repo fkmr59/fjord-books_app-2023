@@ -1,5 +1,26 @@
 ---
 ja:
+  layouts: 
+    application:
+      Logged in as: "ログイン名"
+      My page: "マイページ"
+      User edit: "ユーザー編集"
+      User index: "ユーザー一覧"
+      Logout: "ログアウト"
+  users:
+    index:
+      User index: "ユーザー一覧"
+      email: "Eメール"
+      profile: "プロフィール"
+      books_index: "書籍データ一覧"
+    show:
+      My page: "マイページ"
+      email: "Eメール"
+      postal_code: "郵便番号"
+      address: "住所"
+      profile: "プロフィール"
+      books_index: "書籍データ一覧"
+
   activerecord:
     errors:
       messages:

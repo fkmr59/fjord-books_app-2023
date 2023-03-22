@@ -1,0 +1,8 @@
+<h1><%= t '.User index' %></h1>
+<% @users.each do |user| %>
+  <p><%= t '.email' %> : <%= user.email %></p>
+  <p><%= t '.profile' %> : <%= user.profile %></p>
+<% end %>
+<%= link_to t('.books_index'), books_path %>
+
+<%= paginate @users %>

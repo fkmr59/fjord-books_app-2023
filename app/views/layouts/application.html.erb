@@ -9,8 +9,16 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-
   <body class="<%= params[:action] %>">
+    <% if user_signed_in? %>
+      <p><%= t('.Logged in as') %> <strong><%= current_user.email %></strong>
+      <%= button_to t('.Logout'), destroy_user_session_path, method: :delete %></p>
+      <p><%= link_to t('.My page'), user_path(current_user.id) %> |
+      <%= link_to t('.User edit'), edit_user_registration_path %> |
+      <%= link_to t('.User index'), users_path %></p>
+
+    <% end %>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
