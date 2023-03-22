@@ -1,0 +1,32 @@
+ja:
+  activerecord:
+    models:
+      book: "書籍"
+    attributes:
+      book:
+        title: "書籍のタイトル"
+        memo: "書籍の概要・感想"
+        author: "著者"
+        picture: "書籍の画像"
+
+  views:
+    common:
+      show: "この%{name}を表示"
+      edit: "この%{name}を編集"
+      destroy: "この%{name}を削除"
+      new: "%{name}の新規作成"
+      back: "%{name}の一覧に戻る"
+      title_index: "%{name}の一覧"
+      title_new: "%{name}の新規作成"
+      title_edit: "%{name}の編集"
+
+  controllers:
+    common:
+      notice_create: "%{name}が作成されました。"
+      notice_update: "%{name}が更新されました。"
+      notice_destroy: "%{name}が削除されました。"
+
+  helpers:
+    submit:
+      create: 登録する
+      update: 更新する
