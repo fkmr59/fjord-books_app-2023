@@ -6,7 +6,7 @@ class BooksTest < ApplicationSystemTestCase
   setup do
     @book = books(:one)
 
-    visit root_url
+    visit books_url
     fill_in 'Eメール', with: 'alice@example.com'
     fill_in 'パスワード', with: 'password'
     click_button 'ログイン'
@@ -21,30 +21,31 @@ class BooksTest < ApplicationSystemTestCase
     visit books_url
     click_on '本の新規作成'
 
-    fill_in 'Memo', with: @book.memo
-    fill_in 'Title', with: @book.title
-    click_on 'Create Book'
+    assert_selector 'h1', text: '本の新規作成'
+    fill_in 'タイトル', with: @book.title
+    fill_in 'メモ', with: @book.memo
+    click_on '登録する'
 
-    assert_text 'Book was successfully created'
-    click_on 'Back'
+    assert_text '本が作成されました。'
+    click_on '本の一覧に戻る'
   end
 
   test 'should update Book' do
     visit book_url(@book)
     click_on 'この本を編集', match: :first
 
-    fill_in 'Memo', with: @book.memo
-    fill_in 'Title', with: @book.title
-    click_on 'Update Book'
+    fill_in 'タイトル', with: @book.title
+    fill_in 'メモ', with: @book.memo
+    click_on '更新'
 
-    assert_text 'Book was successfully updated'
-    click_on 'Back'
+    assert_text '本が更新されました。'
+    click_on '本の一覧に戻る'
   end
 
   test 'should destroy Book' do
     visit book_url(@book)
     click_on 'この本を削除', match: :first
 
-    assert_text 'Book was successfully destroyed'
+    assert_text '本が削除されました。'
   end
 end
