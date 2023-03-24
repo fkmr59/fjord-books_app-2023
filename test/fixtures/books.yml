@@ -5,6 +5,7 @@ one:
   memo: Rubyの登竜門
   author: jnchito
 
-# two:
-#   title: MyString
-#   memo: MyText
+two:
+  title: プロを目指す人のためのRuby入門 第2版
+  memo: バージョンアップ！！
+  author: 伊藤淳一
