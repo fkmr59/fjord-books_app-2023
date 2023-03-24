@@ -13,7 +13,7 @@ class BooksTest < ApplicationSystemTestCase
   end
 
   test 'visiting the index' do
-    visit root_url
+    visit books_url
     assert_selector 'h1', text: '本の一覧'
 
     assert_text @book.title
@@ -22,27 +22,27 @@ class BooksTest < ApplicationSystemTestCase
   end
 
   test 'should create book' do
-    visit root_url
+    visit books_url
     click_link '本の新規作成'
 
     assert_selector 'h1', text: '本の新規作成'
 
-    fill_in 'タイトル', with: 'Ruby超入門'
-    fill_in 'メモ', with: 'Rubyの習い初めに'
-    fill_in '著者', with: 'igaiga'
+    fill_in 'タイトル', with: @book.title
+    fill_in 'メモ', with: @book.memo
+    fill_in '著者', with: @book.author
     click_button '登録する'
 
     assert_text '本が作成されました。'
     assert_selector 'h1', text: '本の詳細'
 
-    assert_text 'Ruby超入門'
-    assert_text 'Rubyの習い初めに'
-    assert_text 'igaiga'
+    assert_text @book.title
+    assert_text @book.memo
+    assert_text @book.author
   end
 
   test 'should update Book' do
     visit book_url(@book)
-    click_on 'この本を編集'
+    click_link 'この本を編集'
 
     assert_selector 'h1', text: '本の編集'
 
