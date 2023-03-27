@@ -4,7 +4,7 @@ require 'application_system_test_case'
 
 class ReportsTest < ApplicationSystemTestCase
   setup do
-    @report = reports(:one)
+    @report = reports(:report_one)
     visit root_url
     fill_in 'Eメール', with: 'alice@example.com'
     fill_in 'パスワード', with: 'password'
@@ -43,7 +43,7 @@ class ReportsTest < ApplicationSystemTestCase
 
     assert_selector 'h1', text: '日報の編集'
 
-    @re_report = reports(:two)
+    @re_report = reports(:report_two)
 
     fill_in 'タイトル', with: @re_report.title
     fill_in '内容', with: @re_report.content
