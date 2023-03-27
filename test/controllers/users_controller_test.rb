@@ -1,16 +1,24 @@
 # frozen_string_literal: true
 # # frozen_string_literal: true
 
-# require 'test_helper'
+require 'test_helper'
 
-# class UsersControllerTest < ActionDispatch::IntegrationTest
-#   test 'should get index' do
-#     get users_index_url
-#     assert_response :success
-#   end
+class UsersControllerTest < ActionDispatch::IntegrationTest
 
-#   test 'should get show' do
-#     get users_show_url
-#     assert_response :success
-#   end
-# end
+  include Devise::Test::IntegrationHelpers
+
+  setup do
+    @user = users(:alice)
+    sign_in(@user)
+  end
+
+  test 'should get index' do
+    get users_url
+    assert_response :success
+  end
+
+  test 'should get show' do
+    get users_url(@user)
+    assert_response :success
+  end
+end
