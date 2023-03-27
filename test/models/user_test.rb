@@ -10,6 +10,6 @@ class UserTest < ActiveSupport::TestCase
 
   test 'should user_name' do
     user = users(:bob)
-    assert_equal 'bob', user.name_or_email
+    assert_equal 'ボブ', user.name_or_email
   end
 end

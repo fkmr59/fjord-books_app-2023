@@ -11,7 +11,7 @@ alice:
   postal_code: '123-4567'
   address: '鹿児島'
   self_introduction: 'ユーザー1'
-# bob:
+bob:
   email: bob@example.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
   name: 'ボブ'

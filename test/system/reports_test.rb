@@ -18,7 +18,6 @@ class ReportsTest < ApplicationSystemTestCase
 
     assert_text @report.title
     assert_text @report.content
-
   end
 
   test 'should create report' do
@@ -36,7 +35,6 @@ class ReportsTest < ApplicationSystemTestCase
 
     assert_text @report.title
     assert_text @report.content
-
   end
 
   test 'should update Report' do
@@ -57,14 +55,12 @@ class ReportsTest < ApplicationSystemTestCase
 
     assert_text @re_report.title
     assert_text @re_report.content
-
-
   end
 
   test 'should destroy Report' do
     visit report_url(@report)
     click_button 'この日報を削除'
-    
+
     assert_text '日報が削除されました。'
 
     assert_selector 'h1', text: '日報の一覧'
