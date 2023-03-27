@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+book_one:
   title: プロを目指す人のためのRuby入門
   memo: Rubyの登竜門
   author: jnchito
 
-two:
+book_two:
   title: プロを目指す人のためのRuby入門 第2版
   memo: バージョンアップ！！
   author: 伊藤淳一
