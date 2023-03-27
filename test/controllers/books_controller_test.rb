@@ -1,51 +1,55 @@
 # frozen_string_literal: true
 # # frozen_string_literal: true
 
-# require 'test_helper'
+require 'test_helper'
 
-# class BooksControllerTest < ActionDispatch::IntegrationTest
-#   setup do
-#     @book = books(:one)
-#   end
+class BooksControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
 
-#   test 'should get index' do
-#     get books_url
-#     assert_response :success
-#   end
+  setup do
+    @user = users(:alice)
+    sign_in(@user)
+    @book = books(:book_one)
+  end
 
-#   test 'should get new' do
-#     get new_book_url
-#     assert_response :success
-#   end
+  test 'should get index' do
+    get books_url
+    assert_response :success
+  end
 
-#   test 'should create book' do
-#     assert_difference('Book.count') do
-#       post books_url, params: { book: { memo: @book.memo, title: @book.title } }
-#     end
+  test 'should get new' do
+    get new_book_url
+    assert_response :success
+  end
 
-#     assert_redirected_to book_url(Book.last)
-#   end
+  test 'should create book' do
+    assert_difference('Book.count') do
+      post books_url, params: { book: { memo: @book.memo, title: @book.title } }
+    end
 
-#   test 'should show book' do
-#     get book_url(@book)
-#     assert_response :success
-#   end
+    assert_redirected_to book_url(Book.last)
+  end
 
-#   test 'should get edit' do
-#     get edit_book_url(@book)
-#     assert_response :success
-#   end
+  test 'should show book' do
+    get book_url(@book)
+    assert_response :success
+  end
 
-#   test 'should update book' do
-#     patch book_url(@book), params: { book: { memo: @book.memo, title: @book.title } }
-#     assert_redirected_to book_url(@book)
-#   end
+  test 'should get edit' do
+    get edit_book_url(@book)
+    assert_response :success
+  end
 
-#   test 'should destroy book' do
-#     assert_difference('Book.count', -1) do
-#       delete book_url(@book)
-#     end
+  test 'should update book' do
+    patch book_url(@book), params: { book: { memo: @book.memo, title: @book.title } }
+    assert_redirected_to book_url(@book)
+  end
 
-#     assert_redirected_to books_url
-#   end
-# end
+  test 'should destroy book' do
+    assert_difference('Book.count', -1) do
+      delete book_url(@book)
+    end
+
+    assert_redirected_to books_url
+  end
+end
