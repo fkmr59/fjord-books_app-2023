@@ -3,11 +3,11 @@
 require 'test_helper'
 
 class ReportTest < ActiveSupport::TestCase
-  test '編集可能であるか' do
+  test 'should report edit authority' do
     assert true
   end
+  
 
-  test '日報作成日' do
-    assert true
+  test 'should create report datetime' do
   end
 end

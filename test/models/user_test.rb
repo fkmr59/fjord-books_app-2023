@@ -3,11 +3,13 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  test 'should user_email or user_name' do
-    user = User.new(email: 'foo@example.com', name: '')
-    assert_equal 'foo@example.com', user.name_or_email
+  test 'should user_email' do
+    user = users(:alice)
+    assert_equal 'alice@example.com', user.name_or_email
+  end
 
-    user.name = 'Foo Bar'
-    assert_equal 'Foo Bar', user.name_or_email
+  test 'should user_name' do
+    user = users(:bob)
+    assert_equal 'bob', user.name_or_email
   end
 end

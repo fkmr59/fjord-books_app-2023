@@ -7,7 +7,14 @@
 alice:
   email: alice@example.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
-#
+  name: ''
+  postal_code: '123-4567'
+  address: '鹿児島'
+  self_introduction: 'ユーザー1'
 # bob:
-#   email: alice@example.com
-#   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  email: bob@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  name: 'ボブ'
+  postal_code: '987-6543'
+  address: '鹿児島'
+  self_introduction: 'ユーザー2'
