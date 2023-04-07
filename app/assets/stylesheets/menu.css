@@ -55,3 +55,13 @@ menu-container
 #notice {
     color: var(--global-success-c);
 }
+
+/* #alert-success {
+    color: var(--global-success-c);
+}
+#alert-notice {
+    color: var(--global-success-c);
+}
+#alert-alert {
+    color: var(--global-danger-c);
+} */
