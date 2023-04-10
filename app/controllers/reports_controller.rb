@@ -2,6 +2,7 @@
 
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
+  before_action :check_author, only: %i[edit update destroy]
 
   # GET /reports or /reports.json
   def index
@@ -44,7 +45,7 @@ class ReportsController < ApplicationController
   # DELETE /reports/1 or /reports/1.json
   def destroy
     @report.destroy
-      redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Book.model_name.human)
+      redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
   end
 
   private
@@ -58,4 +59,11 @@ class ReportsController < ApplicationController
   def report_params
     params.require(:report).permit(:title, :content)
   end
+
+  def check_author
+    unless @report.user_id == current_user.id
+      redirect_to reports_url, alert: t('controllers.common.alert_user', name: Report.model_name.human)
+    end
+  end
+
 end

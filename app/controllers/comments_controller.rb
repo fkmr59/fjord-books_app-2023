@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
+  before_action :check_author, only: %i[edit update destroy]
+
   def edit
     set_imageable
     set_comment
@@ -39,4 +41,11 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:content)
   end
+
+  def check_author
+    unless @report.user_id == current_user.id
+      redirect_to reports_url, alert: t('controllers.common.alert_user', name: Report.model_name.human)
+    end
+  end
+
 end
