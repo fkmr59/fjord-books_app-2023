@@ -8,10 +8,6 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @report = Report.find(params[:id])
-  end
-
-  def show
     if Report.exists?(id: params[:id])
       @report = Report.find(params[:id])
     else

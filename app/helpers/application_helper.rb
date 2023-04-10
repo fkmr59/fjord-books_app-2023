@@ -21,6 +21,13 @@ module ApplicationHelper
 
   def content_url_to_link(content)
     uri_reg = URI::DEFAULT_PARSER.make_regexp(%w[http https])
-    content.gsub(uri_reg) { %(<a href='#{::Regexp.last_match(0)}' target='_blank'>#{::Regexp.last_match(0)}</a>) }
+    content.gsub(uri_reg) do |url|
+      id = url.split('/').last.to_i
+      if id != 0 && Report.exists?(id:)
+        %(<a href='#{url}' target='_blank'>#{Report.find(id).title}</a>)
+      else
+        url
+      end
+    end
   end
 end
