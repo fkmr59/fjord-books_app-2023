@@ -48,14 +48,10 @@ menu-container
     background-color: var(--global-secondary-bgc-hover);
 }
 
-.flash-notice {
-    color: var(--global-success-c);
-  }
-
-.flash-success {
-    color: var(--global-success-c);
-  }
-
-.flash-alert {
+#alert {
     color: var(--global-danger-c);
+}
+
+#notice {
+    color: var(--global-success-c);
 }

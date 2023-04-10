@@ -244,5 +244,3 @@ en:
     registrations:
       edit:
         title: "Edit account"
-  flash:
-    success_message: "Welcome! You have signed up successfully."

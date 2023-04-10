@@ -216,5 +216,3 @@ ja:
     registrations:
       edit:
         title: "アカウント編集"
-  flash:
-    success_message: "ようこそ！サインアップに成功しました。"
