@@ -26,11 +26,11 @@ class ReportsController < ApplicationController
   # POST /reports or /reports.json
   def create
     @report = current_user.reports.build(report_params)
-      if @report.save
-        redirect_to report_url(@report), notice: t('controllers.common.notice_create', name: Report.model_name.human)
-      else
-        render :new, status: :unprocessable_entity
-      end
+    if @report.save
+      redirect_to report_url(@report), notice: t('controllers.common.notice_create', name: Report.model_name.human)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   # PATCH/PUT /reports/1 or /reports/1.json
@@ -45,7 +45,7 @@ class ReportsController < ApplicationController
   # DELETE /reports/1 or /reports/1.json
   def destroy
     @report.destroy
-      redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
+    redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: Report.model_name.human)
   end
 
   private
@@ -61,9 +61,8 @@ class ReportsController < ApplicationController
   end
 
   def check_author
-    unless @report.user_id == current_user.id
-      redirect_to reports_url, alert: t('controllers.common.alert_user', name: Report.model_name.human)
-    end
-  end
+    return if @report.user_id == current_user.id
 
+    redirect_to reports_url, alert: t('controllers.common.alert_user', name: Report.model_name.human)
+  end
 end

@@ -43,9 +43,8 @@ class CommentsController < ApplicationController
   end
 
   def check_author
-    unless @report.user_id == current_user.id
-      redirect_to reports_url, alert: t('controllers.common.alert_user', name: Report.model_name.human)
-    end
-  end
+    return if @report.user_id == current_user.id
 
+    redirect_to reports_url, alert: t('controllers.common.alert_user', name: Report.model_name.human)
+  end
 end
