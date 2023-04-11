@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
+  before_action :set_comment, only: %i[edit update destroy]
   before_action :check_author, only: %i[edit update destroy]
 
   def edit
@@ -43,8 +44,8 @@ class CommentsController < ApplicationController
   end
 
   def check_author
-    return if @report.user_id == current_user.id
+    return if @comment.user_id == current_user.id
 
-    redirect_to reports_url, alert: t('controllers.common.alert_user', name: Report.model_name.human)
+    redirect_to reports_url, alert: t('controllers.common.alert_user', name: Comment.model_name.human)
   end
 end
