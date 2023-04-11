@@ -36,12 +36,12 @@
         </ul>
       </div>
     <% end %>
-    <% if notice.present? %>
-      <p id="notice"><%= notice %></p>
-    <% end %>
-    <% if alert.present? %>
-      <p id="alert"><%= alert %></p>
-    <% end %>
+      <% if notice.present? %>
+        <p id="notice"><%= notice %></p>
+      <% end %>
+      <% if alert.present? %>
+        <p id="alert"><%= alert %></p>
+      <% end %>
     <%= yield %>
   </body>
 </html>
