@@ -1,0 +1,8 @@
+<h1><%= t('views.common.title_show', name: Report.model_name.human) %></h1>
+
+<div class="show-item">
+  <%= render "reports/report", report: @report %>
+</div>
+
+<%= render 'comments/form', imageable: @report, comment: @comment %>
+<%= render 'comments/comments', imageable: @report, comments: @comments %>

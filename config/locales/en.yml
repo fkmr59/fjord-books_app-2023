@@ -235,6 +235,7 @@ en:
       notice_create: "%{name} was successfully created."
       notice_update: "%{name} was successfully updated."
       notice_destroy: "%{name} was successfully destroyed."
+      alert_user: "%{name} don't have permission to access."
   layouts:
     application:
       menu: Menu
