@@ -8,10 +8,13 @@ class ReportsController < ApplicationController
   end
 
   def show
-    @report = Report.find(params[:id])
+    if Report.exists?(id: params[:id])
+      @report = Report.find(params[:id])
+    else
+      redirect_to reports_path, alert: t('controllers.common.report_alert', name: Report.model_name.human)
+    end
   end
 
-  # GET /reports/new
   def new
     @report = current_user.reports.new
   end

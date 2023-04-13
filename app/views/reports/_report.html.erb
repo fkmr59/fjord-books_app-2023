@@ -6,7 +6,7 @@
 
   <p>
     <strong><%= Report.human_attribute_name(:content) %>:</strong>
-    <%= format_content report.content %>
+    <%= autolink_with_title(h(format_content(report.content))).html_safe %>
   </p>
 
   <p>
@@ -18,5 +18,14 @@
     <strong><%= Report.human_attribute_name(:created_on) %>:</strong>
     <%= l report.created_on %>
   </p>
+
+  <p>
+    <strong><%= t('views.reports.mentioned_from') %>:</strong>
+  </p>
+  <ul>
+    <% report.mentioned_reports.each do |report| %>
+      <li><%= link_to report.title, report %></li>
+    <% end %>
+  </ul>
 
 </div>
