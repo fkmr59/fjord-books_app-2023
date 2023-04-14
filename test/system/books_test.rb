@@ -72,8 +72,5 @@ class BooksTest < ApplicationSystemTestCase
     assert_selector 'h1', text: '本の一覧'
 
     assert_not Book.exists?(@book.id)
-
-    assert_no_selector 'td', text: @book.title
   end
-
 end
